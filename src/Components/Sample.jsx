@@ -23,6 +23,7 @@ const Sample = () => {
         const overflow = updatedWindow.length - 10;
         updatedWindow = updatedWindow.slice(overflow);
       }
+      //test comment
       setDetails({
         windowPrevState: details.windowCurrState,
         windowCurrState: updatedWindow,
