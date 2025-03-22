@@ -1,13 +1,13 @@
+import Afford from "./Components/AverageCalculator/Afford";
 
-import Api from './Components/Api';
-import Sample from './Components/Sample';
+
+
 
 function App() {
   return (
-        // <Sample/>
+        
         <div>
-          <Sample/>
-          
+          <Afford/>
         </div>
         
   );

@@ -1,10 +1,9 @@
-// mockServer.js
+
 const express = require('express');
 
 const mockApp = express();
-const mockPort = 9001; // Mock server runs on port 9877
+const mockPort = 9001; 
 
-// Mock data for testing
 const mockData = {
   primes: [2, 3, 5, 7, 11],
   fibo: [55, 89, 144, 233, 377, 610, 987, 1597, 2584, 4181, 6765],
@@ -12,7 +11,7 @@ const mockData = {
   rand: [2, 19, 25, 7, 4, 24, 17, 27, 30, 21, 14, 10, 23],
 };
 
-// Endpoints for mock data
+
 mockApp.get('/primes', (req, res) => {
   res.json({ numbers: mockData.primes });
 });
@@ -29,7 +28,6 @@ mockApp.get('/rand', (req, res) => {
   res.json({ numbers: mockData.rand });
 });
 
-// Start the mock server
 mockApp.listen(mockPort, () => {
   console.log(`Mock Server running on http://localhost:${mockPort}`);
 });

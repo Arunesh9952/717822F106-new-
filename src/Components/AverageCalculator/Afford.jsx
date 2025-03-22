@@ -1,6 +1,6 @@
-import React, { Fragment, useState } from 'react';
-import { Container, Form, FormGroup, Label, Input, Button } from 'reactstrap';
-const Sample = () => {
+import React, { useState } from 'react';
+import {Form,Label, Input, Button } from 'reactstrap';
+const Afford = () => {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [type, setType] = useState('fibo');
@@ -23,7 +23,7 @@ const Sample = () => {
         const overflow = updatedWindow.length - 10;
         updatedWindow = updatedWindow.slice(overflow);
       }
-      //test comment
+
       setDetails({
         windowPrevState: details.windowCurrState,
         windowCurrState: updatedWindow,
@@ -40,11 +40,10 @@ const Sample = () => {
     apiFetch(type);
   };
   return (
-    <Fragment>
-      <Container>
-        <h1>Average Calculator Microservice</h1>
+  <div>
+    <h1>Average Calculator HTTP MicroService</h1>
         <Form onSubmit={handleSubmit}>
-          <FormGroup>
+        
             <Label for="numberType">Select Number Type</Label>
             <Input type="select" id="numberType" value={type} onChange={(e) => setType(e.target.value)}>
               <option value="primes">Prime Numbers</option>
@@ -52,20 +51,23 @@ const Sample = () => {
               <option value="even">Even Numbers</option>
               <option value="rand">Random Numbers</option>
             </Input>
-          </FormGroup>
+         
           <Button color="primary" type="submit">Submit</Button>
         </Form>
         {error && <p style={{ color: 'red' }}>Error: {error}</p>}
         {data && (
-          <div style={{ marginTop: '20px' }}>
+         
+             <div style={{alignItems:'center'}}>
             <h2>API Response</h2>
             <pre>{JSON.stringify(data, null, 2)}</pre>
             <h2>Details</h2>
             <pre>{JSON.stringify(details, null, 2)}</pre>
           </div>
+        
+         
         )}
-      </Container>
-    </Fragment>
+  </div>
+
   );
 };
-export default Sample;
+export default Afford;
